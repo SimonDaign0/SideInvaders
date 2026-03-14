@@ -1,3 +1,5 @@
+Target platform: Esp32c3 
+
 Buttons:
   btn1: GPIO3
   btn2: GPIO2
