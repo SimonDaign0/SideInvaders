@@ -7,7 +7,6 @@
 )]
 #![deny(clippy::large_stack_frames)]
 
-use defmt::info; //info!("Hello world!");
 use esp_hal::clock::CpuClock;
 use esp_hal::{ main };
 use esp_hal::time::{ Duration, Instant, Rate };
@@ -54,10 +53,9 @@ fn main() -> ! {
         Input::new(peripherals.GPIO7, InputConfig::default().with_pull(Pull::Up)),
     ];
     sm.start(&mut display);
-
+    //Main Loop
     loop {
         poll_btns(&mut sm, &btns);
-        //
         sm.update(&mut display);
         blocking_delay(5);
     }
